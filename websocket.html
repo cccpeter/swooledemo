@@ -1,0 +1,24 @@
+<html>
+<body>
+	<script type="text/javascript">
+		var wsServer = 'ws://119.29.189.104:9502';
+var websocket = new WebSocket(wsServer);
+websocket.onopen = function (evt) {
+    console.log("Connected to WebSocket server.");
+};
+
+websocket.onclose = function (evt) {
+    console.log("Disconnected");
+};
+
+websocket.onmessage = function (evt) {
+    alert(evt.data);
+};
+
+websocket.onerror = function (evt, e) {
+    alert(evt.data+e);
+};
+	</script>
+</body>
+test
+</html>

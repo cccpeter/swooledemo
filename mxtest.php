@@ -1,0 +1,13 @@
+<?php
+$http->set(
+	[
+		'enable_static_handler'=>true,
+		'document_root'=>"/var/www/swooledemo/thinkphp/public/static",
+		'worker_num'=>5,
+	]
+);
+$http->on('request',function($request,$response){
+	$response->cookie("singwa","xssss",time()+1800);
+	$response->end("sss",json_encode($request->get));
+});
+$http->start();

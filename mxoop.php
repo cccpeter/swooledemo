@@ -72,7 +72,7 @@ class Http {
             }
         }
         $_POST['http_server'] = $this->http;
-
+	var_dump($_POST);
         ob_start();
         // 执行应用并响应
         try {

@@ -35,7 +35,7 @@ class Http {
         // 定义应用目录
         // /var/www/swooledemo/../../../../thinkphp/base.php
         define('APP_PATH', __DIR__.'/thinkphp/application/');
-        print_r(APP_PATH);
+        //print_r(APP_PATH);
         // 加载框架里面的文件
         require __DIR__.'/thinkphp/base.php';
     }
@@ -72,7 +72,7 @@ class Http {
             }
         }
         $_POST['http_server'] = $this->http;
-	var_dump($_POST);
+	//var_dump($_POST);
         ob_start();
         // 执行应用并响应
         try {

@@ -15,5 +15,10 @@ class Index
     {
         echo 'hessdggsg' . $name.time();
     }
-
+    public function connectionredis(){
+        redis = new \Redis();
+        $redis->connect("127.0.0.1",6379);
+        $redis->set('sing',"24124");
+        
+    }
 }

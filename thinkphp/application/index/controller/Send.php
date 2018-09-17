@@ -16,7 +16,6 @@ class Send
             // status 0 1  message data
             return Util::show(config('code.error'), 'error');
         }
-
         //tood
         // 生成一个随机数
         $code = rand(1000, 9999);
@@ -28,8 +27,7 @@ class Send
                 'code' => $code,
             ]
         ];
-echo 111;
-	echo $_POST.'1231241';die;
+
         $_POST['http_server']->task($taskData);
 
         return Util::show(config('code.success'), 'ok');

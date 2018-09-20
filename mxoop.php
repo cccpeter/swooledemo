@@ -10,7 +10,7 @@ class Http {
         $this->http->set(
             [
                 'enable_static_handler' => true,
-                'document_root' => "/var/www/swooledemo/thinkphp/public/static",
+                'document_root' => "/usr/local/nginx/html/swooledemo/thinkphp/public/static",
                 'worker_num' => 4,
             ]
         );

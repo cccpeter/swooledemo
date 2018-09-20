@@ -11,14 +11,10 @@ class Index
         echo time();
     }
 
-    public function hello($name = 'ThinkPHP5')
+    public function hello($name='ThinkPHP5')
     {
         echo 'hessdggsg' . $name.time();
     }
     public function connectionredis(){
-        redis = new \Redis();
-        $redis->connect("127.0.0.1",6379);
-        $redis->set('sing',"24124");
-        
-    }
+          }
 }

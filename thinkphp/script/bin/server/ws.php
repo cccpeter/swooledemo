@@ -19,7 +19,7 @@ class Ws {
         $this->ws->set(
             [
                 'enable_static_handler' => true,
-                'document_root' => "/home/work/hdtocs/swoole_mooc/thinkphp/public/static",
+                'document_root' => "/usr/local/nginx/html/swooledemo/thinkphp/public/static",
                 'worker_num' => 4,
                 'task_worker_num' => 4,
             ]
@@ -49,10 +49,10 @@ class Ws {
      */
     public function onWorkerStart($server,  $worker_id) {
         // 定义应用目录
-        define('APP_PATH', __DIR__ . '/../../../application/');
+        define('APP_PATH', '/usr/local/nginx/html/swooledemo/thinkphp/application/');
         // 加载框架里面的文件
-        //require __DIR__ . '/../thinkphp/base.php';
-        require __DIR__ . '/../../../thinkphp/start.php';
+
+        require '/usr/local/nginx/html/swooledemo/thinkphp/start.php';
     }
 
     /**

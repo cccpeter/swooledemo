@@ -7,6 +7,7 @@ class Send
 {
     /**
      * 发送验证码
+url:http://119.29.189.104:8812/?s=index/send/index&phone_num=13217554571
      */
     public function index() {
         // tp  input
@@ -27,7 +28,7 @@ class Send
                 'code' => $code,
             ]
         ];
-
+        //echo $code;
         $_POST['http_server']->task($taskData);
 
         return Util::show(config('code.success'), 'ok');

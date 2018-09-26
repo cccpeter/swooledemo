@@ -7,7 +7,7 @@ use app\common\lib\redis\Predis;
 class Login
 {
     public function index() {
-        // phone code
+        // phone code   http://119.29.189.104:8811/?s=index/Login/index&phone_num=13217554571&code=1369
         $phoneNum = intval($_GET['phone_num']);
         $code = intval($_GET['code']);
         if(empty($phoneNum) || empty($code)) {
@@ -20,6 +20,7 @@ class Login
         }catch (\Exception $e) {
             echo $e->getMessage();
         }
+//echo $redisCode.'验证码的对接'.$code;die; noproblem
         if($redisCode == $code) {
             // 鍐欏叆redis
             $data = [

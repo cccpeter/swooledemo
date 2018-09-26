@@ -41,6 +41,7 @@ class Predis {
             return '';
         }
         if(is_array($value)) {
+            //print_r($key);
             $value = json_encode($value);
         }
         if(!$time) {

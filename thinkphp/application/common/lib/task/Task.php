@@ -16,19 +16,19 @@ class Task {
      * @param $serv swoole server对象
      */
     public function sendSms($data, $serv) {
-        try {
-            $response = Sms::sendSms($data['phone'], $data['code']);
-        }catch (\Exception $e) {
-            // todo
-            return false;
-        }
+        // try {
+        //     $response = Sms::sendSms($data['phone'], $data['code']);
+        // }catch (\Exception $e) {
+        //     // todo
+        //     return false;
+        // }
 
         // 如果发送成功 把验证码记录到redis里面
-        if($response->Code === "OK") {
+        // if($response->Code === "OK") {
             Predis::getInstance()->set(Redis::smsKey($data['phone']), $data['code'], config('redis.out_time'));
-        }else {
-            return false;
-        }
+        // }else {
+            // return false;
+        // }
         return true;
     }
 

@@ -116,11 +116,11 @@
 				// TODO: 请求后台接口跳转界面，前端跳转或者后台跳
 				$.get("http://119.29.189.104:8811/?s=index/login/index&"+formData, function (data) {
 					//console.log("登录成功");
-					//location.href='http://119.29.189.104/index.html';
+					//location.href='http://119.29.189.104:8811/index.html';
 					res=JSON.parse(data);
 					if(res.status==1){
 					    console.log(res);
-						location.href="http://119.29.189.104/index.html";
+						location.href="http://119.29.189.104:8811/index.html";
 					}
 				});
 			});

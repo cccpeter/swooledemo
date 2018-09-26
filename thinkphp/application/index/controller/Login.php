@@ -1,10 +1,11 @@
 <?php
 namespace app\index\controller;
 
+use think\Controller;
 use app\common\lib\Util;
 use app\common\lib\Redis;
 use app\common\lib\redis\Predis;
-class Login
+class Login extends Controller
 {
     public function index() {
         // phone code   http://119.29.189.104:8811/?s=index/Login/index&phone_num=13217554571&code=1369
@@ -20,7 +21,7 @@ class Login
         }catch (\Exception $e) {
             echo $e->getMessage();
         }
-//echo $redisCode.'验证码的对接'.$code;die; noproblem
+//echo $redisCode.''.$code;die; noproblem
         if($redisCode == $code) {
             // 鍐欏叆redis
             $data = [
@@ -30,7 +31,8 @@ class Login
                 'isLogin' => true,
             ];
             Predis::getInstance()->set(Redis::userkey($phoneNum), $data);
-
+			//setcookie('key','123',time()+3600);//cookiesession
+			echo passport_encrypt('123');
             return Util::show(config('code.success'), 'ok', $data);
         } else {
             return Util::show(config('code.error'), 'login error');
